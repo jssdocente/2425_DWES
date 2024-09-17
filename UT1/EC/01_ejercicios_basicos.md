@@ -78,14 +78,14 @@ Repite los ejercicios anteriores, pero esta vez, utlizando los diferentes opcion
 
 301. Escribe un programa que almacene en variables tu nombre, primer apellido, segundo apellido, email, año de nacimiento y teléfono. Luego muéstralos por pantalla dentro de una tabla con los nombres de las columnas en la primera columna y los valores en la segunda.
 
-    | Nombre | Valor |
-    |--------|-------|
-    | Nombre | ...   |
-    | Apellido 1 | ...   |
-    | Apellido 2 | ...   |
-    | Email | ...   |
-    | Año de nacimiento | ...   |
-    | Teléfono | ...   |
+      | Nombre | Valor |
+      |--------|-------|
+      | Nombre | ...   |
+      | Apellido 1 | ...   |
+      | Apellido 2 | ...   |
+      | Email | ...   |
+      | Año de nacimiento | ...   |
+      | Teléfono | ...   |
 
 
 302. Calcula la edad de una persona, si nacio en tal año (fijada por tí) y mostrar:
@@ -93,17 +93,17 @@ Repite los ejercicios anteriores, pero esta vez, utlizando los diferentes opcion
    - muestra qué año será en cada uno de los casos. 
    - muestra el año de jubilación suponiendo que trabajarás hasta los 67 años.
 
-    Tip: La función `date('Y')` devuelve el año actual.
+      > Tip: La función `date('Y')` devuelve el año actual.
     Utiliza el siguiente formato:
 
-    ```
-    Datos de la persona:
-    - Nacimiento: 1991
-    - Edad actual: 33 años
-    - Dentro de 10 años tendrás 43 años y será el año 2034
-    - Hace 10 años tenías 23 años y era el año 2004
-    - Te jubilarás en el año 2050
-    ```
+      ```
+      Datos de la persona:
+      - Nacimiento: 1991
+      - Edad actual: 33 años
+      - Dentro de 10 años tendrás 43 años y será el año 2034
+      - Hace 10 años tenías 23 años y era el año 2004
+      - Te jubilarás en el año 2050
+        ```
 
 303. A partir de una edad (fijada por tí) muestra por pantalla:
 
@@ -115,7 +115,7 @@ Repite los ejercicios anteriores, pero esta vez, utlizando los diferentes opcion
 
 304. Escribe un programa que funciones similar a un reloj, de manera que a partir de los valores de hora del sistema, muestra la hora dentro de un segundo. Tras las 23:59:59, debe mostrar 00:00:00.
 
-    Tip: Utiliza la función `date('H:i:s')` para obtener la hora actual.
+      > Tip: Utiliza la función `date('H:i:s')` para obtener la hora actual.
     
 
 ### Bloque 4: Bucles
@@ -123,18 +123,19 @@ Repite los ejercicios anteriores, pero esta vez, utlizando los diferentes opcion
 
 402.  Escribe un programa que muestre la tabla de multiplicar del 2, del 3 y del 4, utilizando un bucle `for`. El texto `Tabla ...` debe ser un título de nivel 2 `<h3>` y cada línea de la tabla debe ser un párrafo `<li>`.
 
-    ```
-    Tabla del 2
-    2 x 1 = 2
-    2 x 2 = 4
-    ...
-    2 x 10 = 20
+      ```text
+      Tabla del 2
+      2 x 1 = 2
+      2 x 2 = 4
+      ...
+      2 x 10 = 20
 
-    Tabla del 3
-    3 x 1 = 3
-    3 x 2 = 6
-    ...
-    3 x 10 = 30
+      Tabla del 3
+      3 x 1 = 3
+      3 x 2 = 6
+      ...
+      3 x 10 = 30
+      ```
 
 
 408. Escribe un programa que muestre los números pares del 0 al 50 (dentro de una lista desordenada).
@@ -143,7 +144,7 @@ Repite los ejercicios anteriores, pero esta vez, utlizando los diferentes opcion
 
 410. A partir de una base y exponente, mediante la acumulación de productos, calcula la potencia utilizando la instrucción for.
   
-      ```
+      ```text
       #Ejemplo
 
       2^3 = 2 * 2 * 2 = 8
@@ -157,22 +158,22 @@ Repite los ejercicios anteriores, pero esta vez, utlizando los diferentes opcion
 
 413. Escribe un programa que muestre los números del 1 al 100, pero que en lugar de los múltiplos de 3 muestre la palabra "Fizz" y en lugar de los múltiplos de 5 muestre "Buzz". Para los múltiplos de ambos, muestra "FizzBuzz".
 
-    ```
-    1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz, ...
-    ```
+      ```
+      1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz, ...
+      ```
 414. Muestra dentro de una tabla HTML la tabla de multiplicar del numero que reciba como parámetro.
     
       > Recordartorio: <br>
       > [La etiqueta HTML `<table>`](https://lenguajehtml.com/html/tablas/etiqueta-html-table/)
     
-    Por ejemplo:
+      Por ejemplo:
 
-    | a | * | b | = | a*b |
-    |---|---|---|---|-----|
-    | 7 | * | 1 | = | 7   |
-    | 7 | * | 2 | = | 14  |
-    | ... | | | | |
-    | 7 | * | 10 | = | 70  |
+      | a | * | b | = | a*b |
+      |---|---|---|---|-----|
+      | 7 | * | 1 | = | 7   |
+      | 7 | * | 2 | = | 14  |
+      | ... | | | | |
+      | 7 | * | 10 | = | 70  |
 
 
 414. Muestra dentro de una tabla HTML la tabla de multiplicar del numero que reciba como parámetro. Utiliza <thead> con sus respectivos <th> y <tbody> para dibujar la tabla.
@@ -180,14 +181,14 @@ Repite los ejercicios anteriores, pero esta vez, utlizando los diferentes opcion
       > Recordartorio: <br>
       > [La etiqueta HTML `<thead>`](https://lenguajehtml.com/html/tablas/organizacion-tablas/)
     
-    Por ejemplo:
+      Por ejemplo:
 
-    | a | * | b | = | a*b |
-    |---|---|---|---|-----|
-    | 7 | * | 1 | = | 7   |
-    | 7 | * | 2 | = | 14  |
-    | ... | | | | |
-    | 7 | * | 10 | = | 70  |
+      | a | * | b | = | a*b |
+      |---|---|---|---|-----|
+      | 7 | * | 1 | = | 7   |
+      | 7 | * | 2 | = | 14  |
+      | ... | | | | |
+      | 7 | * | 10 | = | 70  |
 
 
 415. Muestra dentro de una tabla HTML la tabla de multiplicar del numero que reciba como parámetro. Utiliza <thead> con sus respectivos <th> y <tbody> para dibujar la tabla. Además, añade una fila con el resultado de la suma de todos los resultados.
