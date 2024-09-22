@@ -1,4 +1,4 @@
-# Ejercicios básicos de PHP
+# 01. Ejercicios básicos de PHP
 
 Estos ejercicios están pensados para que puedas practicar y afianzar los conocimientos adquiridos en este tema.
 
