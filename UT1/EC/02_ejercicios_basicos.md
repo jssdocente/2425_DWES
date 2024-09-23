@@ -6,7 +6,7 @@ Estos ejercicios están pensados para que puedas practicar y afianzar los conoci
 
 Normas de entrega:
 
-- Cada ejericio se entregará en un archivo independiente, con el formato `T02_XXX_ejercicio.php`, donde `XX` será el número del ejercicio.  (Ejemplo: `T02_001_ejercicio.php`).
+- Cada ejericio se entregará en un archivo independiente, con el formato `02.XXX_ejercicio.php`, donde `XX` será el número del ejercicio.  (Ejemplo: `02.001_ejercicio.php`).
 - Se guardarán dentro de la estructura de carpetas del tema `UT2`, carpeta ejercicios `EC`y `01_basicos`. En la ruta `UT2\EC\02_basicos\`.
 - No es necesario entregarlos como tarea, pero si es necesario realizarlos, y se preguntarán aleatoriamente en clase.
 
