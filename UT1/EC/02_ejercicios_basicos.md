@@ -91,6 +91,7 @@ Por cada ronda, se mostrará la siguiente información:
 Al final, se mostrará se mostrará el jugador ganadory el número del jugador que lo tiene.
 
 
+
 ### Funciones
 
 600. Crea las siguientes funciones:
@@ -134,9 +135,31 @@ Al final, se mostrará se mostrará el jugador ganadory el número del jugador q
       La página mostrará el resultado de la conversión, indicando `100 dolares son 108 euros a un factor de conversión de 1.08` o `100 euros son 92.59 dolares a un factor de conversión de 1.08`.
 
 
+606. Número de argumentos variables.
+  Crea una función que reciba un número variable de argumentos y concatenalos juntos, separados por `,`. Devolver la cadena resultante.<br>
+  Utiliza la función `func_get_args()` para obtener los argumentos. <br>
+  Muestra la cadena resultante en un párrafo `<p>`. <br>
+      > Ejemplo: `concatenar('Hola', 'Mundo', 'desde', 'PHP')` → `Hola, Mundo, desde, PHP`
+
+
+607. Basado en el ejercicio anterior, crea otra función con el nombre `concatenarVariadics`, utilizando el operador `...` para obtener los argumentos. <br>
+      > Ejemplo: `concatenarVariadics('Hola', 'Mundo', 'desde', 'PHP')` → `Hola, Mundo, desde, PHP`  (Para más info consulta este [articulo](https://flatcoding.com/tutorials/php-programming/php-variadic-functions/))
+
+
+608. Argumentos con nombre.
+     Crea una función que reciba 3 argumentos, `a`, `b` y `c`, y devuelva la suma de los 3. <br>
+     Asigna un valor por defecto a `c` de 10 y `b` de 15.<br>
+     Llama a la función de tres maneras distintas:
+      - Pasando los mínimos argumentos necesarios.
+      - Pasando argumentos a y b, y omitiendo c.
+      - Pasando argumentos a y c, y omitiendo b.
+      - Pasando los tres argumentos, pero en distinto orden, primero `c`, luego `a` y por último `b`.
+
+     Ejecuta las llamadas a las funciones, en una expresión dentro de un párrafo `<p>`, mostrando el resultado de cada llamada, en indicando en el mensaje el tipo de llamada realizada.
+
 #### Funciones anónimas
 
-606. Crea una función anónima que calcule si un número es par y otra para impar, y asignar a una variable.
+609. Crea una función anónima que calcule si un número es par y otra para impar, y asignar a una variable.
      
      Utilizando el array de números aleatorios `$arrAleatorios`, crea una función `filtrarPar` que filtre los números pares, y otra `filtrarImpar` que filtre los números impares, utilizando las funciones anónimas y devuelva un array con los números filtrados.
 
@@ -146,25 +169,151 @@ Al final, se mostrará se mostrará el jugador ganadory el número del jugador q
 
 #### Funciones lambda
 
-608. Basándote en el ejercicio anterior, en lugar de asignar a variables, modifica la función `filtrarPar` y `filtrarImpar` pasando las funciones directamente en la firma de la función. <br>
+610. Basándote en el ejercicio anterior, en lugar de asignar a variables, modifica la función `filtrarPar` y `filtrarImpar` pasando las funciones directamente en la firma de la función. <br>
       
       Prueba la función con el array de números aleatorios, y mostrando el resultado a través de `var_dump()`.
 
 
-609. Basada en el ejercicio anterior, crea una única función `filtrar` que reciba un array y una función lambda en formato `arrow`, y devuelva un array con los elementos filtrados. <br>
+611. Basada en el ejercicio anterior, crea una única función `filtrar` que reciba un array y una función lambda en formato `arrow`, y devuelva un array con los elementos filtrados. <br>
      
      - Prueba la función con los números pares e impares, y mostrando el resultado a través de `var_dump()`.
 
 
-610. Basada en el ejercicio anterior, ahora utiliza la función predefida `array_filter` para realizar el filtrado de los elementos. <br>
+612. Basada en el ejercicio anterior, ahora utiliza la función predefida `array_filter` para realizar el filtrado de los elementos. <br>
      
      - Prueba la función con los números pares e impares, y mostrando el resultado a través de `var_dump()`.
   
 
-611. Usa la función `array_map` para aplicar una función a cada uno de los elementos de un array. <br>
+613. Usa la función `array_map` para aplicar una función a cada uno de los elementos de un array. <br>
      
      - Crea una función que reciba un número y devuelva el cuadrado del mismo y probar con un array de números aleatorios. (Mostrar con `var_dump()`)
      - Igual, pero con una función que devuelva el cubo del número pero pasada como función anónima (Mostrar con `var_dump()`)
      - Igual, pero pasada como función flecha (Mostrar con `var_dump()`)
 
 
+614. Transformar el siguiente json en un array, y mostrarlo por pantalla, en una lista ordenada. Recorre el array utilizando un bucle `foreach`.
+
+```json
+$json = '{
+  "nombre": "Juan",
+  "apellidos": "Garcia Fernandez",
+  "edad": 25,
+  "ciudad": "Madrid",
+  "pais": "España"
+}';
+```
+
+> **Nota:** Utiliza la función `json_decode($json, true)` para convertir el json en un array.<br>
+> El parámetro `true` indica que se convierta en un array asociativo.<br>
+> En el este articulo puedes encontrar más información [parsear un json en PHP](https://code.tutsplus.com/how-to-parse-json-in-php--cms-36994t)
+
+
+615. Dado el siguiente json, de varios niveles, conviértelo en un array y muestra la información por pantalla, recorriendo el array con un bucle `foreach`, por cada nivel, creando una lista ordenada anidada.
+
+```json
+$json = '{
+  "nombre": "Juan",
+  "apellidos": "Garcia Fernandez",
+  "edad": 25,
+  "ciudad": "Madrid",
+  "pais": "España",
+  "estudios": {
+    "ciclo": "DAW",
+    "curso": 2,
+    "asignaturas": ["DWES", "DWEC", "DIW", "EIE", "EIN"]
+  },
+  "familia": {
+    "padre": {
+      "nombre": "Pedro",
+      "apellidos": "Garcia Fernandez",
+      "edad": 55
+    },
+    "madre": {
+      "nombre": "Maria",
+      "apellidos": "Fernandez Lopez",
+      "edad": 50
+    },
+    "hermanos": [
+      {
+        "nombre": "Ana",
+        "apellidos": "Garcia Fernandez",
+        "edad": 30
+      },
+      {
+        "nombre": "Luis",
+        "apellidos": "Garcia Fernandez",
+        "edad": 28
+      }
+    ]
+  }
+}';
+```
+
+> Tip: Para conocer si un valor es un array, puedes utilizar la función `is_array($valor)`. Para conocer si un valor es un objeto, puedes utilizar la función `is_object($valor)`.
+
+Crea una función recursiva `recorrerArray` para recorrer el array y mostrar la información. En este caso, la función recibirá el array y imprimirá la información por pantalla, utilizando listas desordenadas anidadas.
+
+
+616. Basado en el ejercicio 607.
+     
+      Crea una función que reciba un número variable de argumentos (opción ...) y aplicar una función `lambda` pasada como parámetro.<br>
+      La función devolverá un array, con los argumentos pasados y aplicada la función a cada uno de ellos.<br>
+      Muestra el resultado por pantalla, utilizando `var_dump()`.
+
+
+
+### Funciones predefinidas
+
+700. Crea una función `contarLetrasPosicionImpar` que reciba una cadena, y devuelva el número de caracteres en posiciones impares.<br>
+     Para probar la función, prueba varias opciones con frases de distinta longitud.
+
+
+701. Crea una función `contarVocales` que reciba una cadena, y devuelva un array asociativo con cada una de las vocales como clave, y el total por cada una como valor. <br>
+     Para probar la función, prueba varias opciones con frases de distinta longitud, y muestra el resultado con `var_dump()`.
+
+
+702. Crea una función `analizador` que reciba una cadena, y devuelva un array asociativo con la siguiente información:
+     
+     - Número de palabras
+     - Número de letras
+     - Número de vocales
+     - Número de consonantes
+     - Número de espacios
+
+     Para conocer si un valor es un espacio, puedes utilizar la función `ctype_space($valor)`, para conocer si un valor es una letra, puedes utilizar la función `ctype_alpha($valor)`, para conocer si un valor es un número, puedes utilizar la función `ctype_digit($valor)`, etc...<br>
+
+     Para probar la función, prueba varias opciones con frases de distinta longitud, y muestra el resultado con `echo print_r()`.
+
+703. Escribe una función `esPalindromo` que reciba una cadena y devuelva `true` si es un palíndromo, `false` en caso contrario. <br>
+     Para probar la función, muestra al menos 3 palabras, y ejecuta las llamadas dentro de un párrafo `<p>`, mostrando el resultado de cada llamada.
+       > Ejemplo: `<p>OSO es palindromo? <?= ... ?> </p>`, utilizando un condicional ternario.
+
+
+704. Crea una función `convertirFraseToCani` que trasforme en Mayúscula las letras alternas.
+      Para probar la función, define al menos 3 frases, declaradas dentro de un script PHP (en HTML), y ejecuta las llamadas dentro de un párrafo `<p>`, mostrando el resultado de cada llamada.
+        > Ejemplo: <BR> 
+            `<p><?= "Esta frase en Cani:"?><br><?= $frase ?></p>`<br>
+            `<p><?= ... ?></p>`
+
+705. Genera una función `codificaCesar()` para codificar una frase, utilizando el código de César. Tenga un parámetro `shiftPositions` que indique el número de elementos a desplazar el carácter. Si no se indica nada, por defecto el desplazamiento es 3. <br>
+     
+     Utiliza las funciones para trabajar con caracteres, a patir de una cadena y un desplazamiento:
+     
+     - Si el desplazamiento es 1, susituye cada letra por la A por la B, la B por la C, etc... y la Z por la A.
+     - El desplazamiento no puede ser negativo.
+     - Si se sale del rango de las letras, se reinicia en la A.
+     - Los espacios, puntos y comas, no se modifican. (se supone que no se utilizan tildes ni caracteres especiales).
+
+     Para probar la función, hazlo al menos con 3 frases, y volcar con `echo` el resultado de cada llamada.	
+
+
+706. Genera una función `decodificaCesar(), para decodificar una frase, por defecto el desplazamiento es 3. Se aplican las mismas reglas que para el ejercicio 705. <br>
+     Copia en este archivo lo que necesites del ejercicio anterior.<br>
+     Prueba codificando y decodificando al menos 3 frases, y volcar con `echo` el resultado de cada llamada.
+
+707. Crea una función `passwordGenerator` que genere una contraseña aleatoria de por defecto 8 caracteres, 2 digitos, 1 caracter especial y el resto letras. <br>
+     La función recibirá 3 parámetros, `longitud`, `digitos` y `especiales`, y tendran los valores por defecto indicados.<br>
+     Para probar la función, genera al menos 3 contraseñas, y volcar con `echo` el resultado de cada llamada.
+
+
+708. Quininela...
