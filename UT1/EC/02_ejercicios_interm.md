@@ -1,4 +1,4 @@
-# 02. Ejercicios básicos de PHP
+# 02. Ejercicios nivel intermedio en PHP
 
 Estos ejercicios están pensados para que puedas practicar y afianzar los conocimientos adquiridos en este tema.
 
@@ -7,7 +7,7 @@ Estos ejercicios están pensados para que puedas practicar y afianzar los conoci
 Normas de entrega:
 
 - Cada ejericio se entregará en un archivo independiente, con el formato `02.XXX_ejercicio.php`, donde `XX` será el número del ejercicio.  (Ejemplo: `02.001_ejercicio.php`).
-- Se guardarán dentro de la estructura de carpetas del tema `UT2`, carpeta ejercicios `EC`y `01_basicos`. En la ruta `UT2\EC\02_basicos\`.
+- Se guardarán dentro de la estructura de carpetas del tema `UT2`, carpeta ejercicios `EC`y `02_medios`. En la ruta `UT2\EC\02_medios\`.
 - No es necesario entregarlos como tarea, pero si es necesario realizarlos, y se preguntarán aleatoriamente en clase.
 
 
@@ -77,7 +77,56 @@ Teniendo el siguiente array: `$array = [1, 2, 4, 5, 6, 7, 8, 9];`
 ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 ```
 
-505. *Juego del calamar.* <br>
+505. Escribe un programa que pida 10 números por teclado y que luego muestre los números introducidos junto con las palabras “máximo” y “mínimo” al lado del máximo y del mínimo respectivamente.
+
+506. Escribe un programa que solicite que realice lo siguiente:
+     - Solicite una frase por teclado.
+     - Solicite un número para el desplazamiento de los caracteres. (puede ser positivo o negativo).
+     - Reemplace los espacios por `_'.
+     - Que almacene cada caracter en un array
+     - Y que aplique la rotación indicada en el número introducido. Es decir el nº de la posición 0, debe pasar a la posición 1, el de la 1 a la 2, etc.. el de la ultima posición debe pasar a la posición 0.Finalmente, muestra el contenido del array.
+
+    Finalmente, muestra la información de la frase original, y la frase con la rotación aplicada.
+
+
+507. Basado en el ejercicio anterior, escribe un programa que solicite que realice lo siguiente:
+     - Solicite una frase por teclado.
+     - Solicite un número para el desplazamiento de los caracteres. (Solo positivos)
+     - Reemplace los espacios por `_'.
+     - Que almacene cada caracter en un array
+     - Y que aplique la rotación indicada en el número introducido. Es decir el nº de la posición 0, debe pasar a la posición 1, el de la 1 a la 2, etc.. el de la ultima posición debe pasar a la posición 0.Finalmente, muestra el contenido del array.
+
+        Finalmente, muestra la información de la frase original, y la frase con la rotación aplicada.
+
+508. Basado en el ejercicio anterior, escribe un programa que solicite que realice lo siguiente:
+     - Solicite una frase por teclado.
+     - Solicite un número para el desplazamiento de los caracteres. (Puede ser positivo y negativo)
+     - Reemplace los espacios por `_'.
+     - Que almacene cada caracter en un array
+     - Y que aplique la rotación indicada en el número introducido. Es decir el nº de la posición 0, debe pasar a la posición 1, el de la 1 a la 2, etc.. el de la ultima posición debe pasar a la posición 0.Finalmente, muestra el contenido del array.
+
+        Finalmente, muestra la información de la frase original, y la frase con la rotación aplicada.
+
+509. Escribe un programa que genere 50 números aleatorios del 0 al 20 y que los muestre por pantalla separados por espacios y generará una lista ordenada. A continuación, el programa pedirá por teclado 2 valores y a continuación cambiará todas las ocurrencias del primer valor por el segundo, mostrandose los números que han cambiado en un color <em style="color: red">diferente</em>.
+
+510. Escribe un programa que genere 20 números enteros aleatorios entre 0 y 100 y que los almacene en un array. El programa debe ser capaz de pasar todos los números pares a las primeras posiciones del array (del 0 en adelante) y todos los números impares a las celdas restantes. Muestra el array resultante con un `print_r()`.
+
+511. Realiza un programa que escoja al azar 10 cartas de la baraja española y que diga cuántos puntos suman según el juego de la brisca. Emplea un array asociativo para obtener los puntos a partir del nombre de la carta. 
+     
+     |Carta|Puntos|
+      |---|---|
+      |As|11|
+      |Tres|10|
+      |Rey|4|
+      |Caballo|3|
+      |Sota|2|
+      |Resto de cartas|0|
+      
+      
+    Muestra las cartas obtenidas, y los puntos obtenidos.
+      
+
+512. *Juego del calamar.* <br>
 Crea un array asociativo, para simular que 10 personas compran un boleto de loteria entre 1-100 números. Cada persona comprará un número aleatorio, y no se pueden repetir. <br>
 El programa debe ejecutarse hasta que haya un único ganador, que será el que quede en pie. <br>
 El programa irá obteniedo números de 1-100, simulando que se extraen del bombo. Si el número extraido coincide con el número de algún jugador, este quedará eliminado, sino se volverá a tirar. Ganará el último Jugador. <br>
@@ -88,7 +137,7 @@ Por cada ronda, se mostrará la siguiente información:
 - Lista de los números extraidos.
 - No hay jugador con ese número o Jugador eliminado. (Quedan X jugadores)
   
-Al final, se mostrará se mostrará el jugador ganadory el número del jugador que lo tiene.
+Al final, se mostrará el jugador ganadory el número del jugador que lo tiene.
 
 
 
@@ -157,6 +206,24 @@ Al final, se mostrará se mostrará el jugador ganadory el número del jugador q
 
      Ejecuta las llamadas a las funciones, en una expresión dentro de un párrafo `<p>`, mostrando el resultado de cada llamada, en indicando en el mensaje el tipo de llamada realizada.
 
+
+609. Crea una función `esCapicua` que devuelva `true` si un número es capicua, `false` en caso contrario. <br>
+     Para probar la función, prueba con los siguientes números: 121, 12321, 12345, 123321, 123456, 1234321, 1234567, 123454321.
+
+610. Crea una función `esPrimo` que devuelva `true` si un número es primo, `false` en caso contrario. <br>
+     
+
+611. Crea una función `siguientePrimo` que devuelva el siguiente número primo más próximo al número pasado como parámetro. <br>
+     
+612. Crea una función `contaDigitos` que devuleva el número de dígitos de un número entero pasado como parámetro. <br>
+
+613. Crea una función `volteaNumero` que devuelva el número pasado como parámetro, pero volteado. <br>
+
+614. Crea una función `quitarPorDetras` que devuelva el número pasado como parámetro, pero quitando los dígitos indicados por el segundo parámetro. <br>
+
+615. Crea un programa que solicite un número en binario por teclado, y lo pase a decimal. Muestre el número en binario y el número en decimal. <br>
+     
+
 #### Funciones anónimas
 
 609. Crea una función anónima que calcule si un número es par y otra para impar, y asignar a una variable.
@@ -208,58 +275,11 @@ $json = '{
 > En el este articulo puedes encontrar más información [parsear un json en PHP](https://code.tutsplus.com/how-to-parse-json-in-php--cms-36994t)
 
 
-615. Dado el siguiente json, de varios niveles, conviértelo en un array y muestra la información por pantalla, recorriendo el array con un bucle `foreach`, por cada nivel, creando una lista ordenada anidada.
-
-```json
-$json = '{
-  "nombre": "Juan",
-  "apellidos": "Garcia Fernandez",
-  "edad": 25,
-  "ciudad": "Madrid",
-  "pais": "España",
-  "estudios": {
-    "ciclo": "DAW",
-    "curso": 2,
-    "asignaturas": ["DWES", "DWEC", "DIW", "EIE", "EIN"]
-  },
-  "familia": {
-    "padre": {
-      "nombre": "Pedro",
-      "apellidos": "Garcia Fernandez",
-      "edad": 55
-    },
-    "madre": {
-      "nombre": "Maria",
-      "apellidos": "Fernandez Lopez",
-      "edad": 50
-    },
-    "hermanos": [
-      {
-        "nombre": "Ana",
-        "apellidos": "Garcia Fernandez",
-        "edad": 30
-      },
-      {
-        "nombre": "Luis",
-        "apellidos": "Garcia Fernandez",
-        "edad": 28
-      }
-    ]
-  }
-}';
-```
-
-> Tip: Para conocer si un valor es un array, puedes utilizar la función `is_array($valor)`. Para conocer si un valor es un objeto, puedes utilizar la función `is_object($valor)`.
-
-Crea una función recursiva `recorrerArray` para recorrer el array y mostrar la información. En este caso, la función recibirá el array y imprimirá la información por pantalla, utilizando listas desordenadas anidadas.
-
-
-616. Basado en el ejercicio 607.
+615. Basado en el ejercicio 607.
      
       Crea una función que reciba un número variable de argumentos (opción ...) y aplicar una función `lambda` pasada como parámetro.<br>
       La función devolverá un array, con los argumentos pasados y aplicada la función a cada uno de ellos.<br>
       Muestra el resultado por pantalla, utilizando `var_dump()`.
-
 
 
 ### Funciones predefinidas
