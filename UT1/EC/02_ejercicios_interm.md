@@ -48,7 +48,7 @@ Teniendo el siguiente array: `$array = [1, 2, 4, 5, 6, 7, 8, 9];`
 - Agrega el número 11 en la posición 3 del array y muestra el resultado.
 - Reemplaza el número en la posición 5 por el número 50 y muestra el resultado.
 
-501.   Rellena un array con 50 números aleatorios comprendidos entre el 0 y el 99, y luego muéstralo en una lista desordenada. Para crear un número aleatorio, utiliza la función rand(inicio, fin). Por ejemplo:
+501. Rellena un array con 50 números aleatorios comprendidos entre el 0 y el 99, y luego muéstralo en una lista desordenada (ul). Para crear un número aleatorio, utiliza la función `rand(inicio, fin)`. Por ejemplo:
 
 ```php	
 <!doctype html>
@@ -77,16 +77,17 @@ Teniendo el siguiente array: `$array = [1, 2, 4, 5, 6, 7, 8, 9];`
 ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 ```
 
-505. Escribe un programa que pida 10 números por teclado y que luego muestre los números introducidos junto con las palabras “máximo” y “mínimo” al lado del máximo y del mínimo respectivamente.
+505. Escribe un programa que genere 10 números aleatorios y que luego muestre los números introducidos junto con las palabras “máximo” y “mínimo” al lado del máximo y del mínimo respectivamente.
+     
 
 506. Escribe un programa que solicite que realice lo siguiente:
-     - Solicite una frase por teclado.
-     - Solicite un número para el desplazamiento de los caracteres. (puede ser positivo o negativo).
+     - Solicite una frase por teclado.  ([¿Cómo leer datos por teclado?](https://parzibyte.me/blog/2021/08/19/php-leer-datos-teclado/))
+     - Solicite un número para el desplazamiento de los caracteres.
      - Reemplace los espacios por `_'.
      - Que almacene cada caracter en un array
      - Y que aplique la rotación indicada en el número introducido. Es decir el nº de la posición 0, debe pasar a la posición 1, el de la 1 a la 2, etc.. el de la ultima posición debe pasar a la posición 0.Finalmente, muestra el contenido del array.
 
-    Finalmente, muestra la información de la frase original, y la frase con la rotación aplicada.
+     Finalmente, muestra la información de la frase original, y la frase con la rotación aplicada.
 
 
 507. Basado en el ejercicio anterior, escribe un programa que solicite que realice lo siguiente:
@@ -123,7 +124,7 @@ Teniendo el siguiente array: `$array = [1, 2, 4, 5, 6, 7, 8, 9];`
       |Resto de cartas|0|
       
       
-    Muestra las cartas obtenidas, y los puntos obtenidos.
+     Muestra las cartas obtenidas, y los puntos obtenidos.
       
 
 512. *Juego del calamar.* <br>
@@ -146,7 +147,7 @@ Al final, se mostrará el jugador ganadory el número del jugador que lo tiene.
 600. Crea las siguientes funciones:
 
   - `esPar(int $num)`: Devuelve `true` si el número es par, `false` en caso contrario.
-  - Una función que devuelva un array de tamaño `$tam` con números aleatorios comprendido entre $min y $max : arrayAleatorio(int $tam, int $min, int $max) : array.
+  - Una función que devuelva un array de tamaño `$tam` con números aleatorios comprendido entre $min y $max : `arrayAleatorio(int $tam, int $min, int $max)` : array.
   - Una función que reciba un `$array` por referencia y devuelva la cantidad de números pares que contiene.<br>
   `arrayPares(array &$array): int`
 
@@ -169,7 +170,7 @@ Al final, se mostrará el jugador ganadory el número del jugador que lo tiene.
 
 603. Crea las siguientes funciones:
 
-  - Una función dolar2euro(float $dolares): float que convierta una cantidad de dólares a euros. La función recibirá un parámetro que será el factor de conversión. En caso de que no se indique nada, aplicar el siguiente factor (1.08).
+  - Una función `dolar2euro(float $dolares): float` que convierta una cantidad de dólares a euros. La función recibirá un parámetro que será el factor de conversión. En caso de que no se indique nada, aplicar el siguiente factor (1.08).
   - La misma función, pero que convierta de euros a dólares.
   - Prueba las funciones anteriores probando con diferentes cantidades y factores de conversión.
 
@@ -185,9 +186,10 @@ Al final, se mostrará el jugador ganadory el número del jugador que lo tiene.
 
 
 606. Número de argumentos variables.
-  Crea una función que reciba un número variable de argumentos y concatenalos juntos, separados por `,`. Devolver la cadena resultante.<br>
-  Utiliza la función `func_get_args()` para obtener los argumentos. <br>
-  Muestra la cadena resultante en un párrafo `<p>`. <br>
+     
+     Crea una función que reciba un número variable de argumentos y concatenalos juntos, separados por `,`. Devolver la cadena resultante.<br>
+     Utiliza la función `func_get_args()` para obtener los argumentos. <br>
+     Muestra la cadena resultante en un párrafo `<p>`. <br>
       > Ejemplo: `concatenar('Hola', 'Mundo', 'desde', 'PHP')` → `Hola, Mundo, desde, PHP`
 
 
@@ -196,6 +198,7 @@ Al final, se mostrará el jugador ganadory el número del jugador que lo tiene.
 
 
 608. Argumentos con nombre.
+     
      Crea una función que reciba 3 argumentos, `a`, `b` y `c`, y devuelva la suma de los 3. <br>
      Asigna un valor por defecto a `c` de 10 y `b` de 15.<br>
      Llama a la función de tres maneras distintas:
@@ -260,19 +263,19 @@ Al final, se mostrará el jugador ganadory el número del jugador que lo tiene.
 
 614. Transformar el siguiente json en un array, y mostrarlo por pantalla, en una lista ordenada. Recorre el array utilizando un bucle `foreach`.
 
-```json
-$json = '{
-  "nombre": "Juan",
-  "apellidos": "Garcia Fernandez",
-  "edad": 25,
-  "ciudad": "Madrid",
-  "pais": "España"
-}';
-```
+     ```json
+     $json = '{
+     "nombre": "Juan",
+     "apellidos": "Garcia Fernandez",
+     "edad": 25,
+     "ciudad": "Madrid",
+     "pais": "España"
+     }';
+     ```
 
-> **Nota:** Utiliza la función `json_decode($json, true)` para convertir el json en un array.<br>
-> El parámetro `true` indica que se convierta en un array asociativo.<br>
-> En el este articulo puedes encontrar más información [parsear un json en PHP](https://code.tutsplus.com/how-to-parse-json-in-php--cms-36994t)
+     > **Nota:** Utiliza la función `json_decode($json, true)` para convertir el json en un array.<br>
+     > El parámetro `true` indica que se convierta en un array asociativo.<br>
+     > En el este articulo puedes encontrar más información [parsear un json en PHP](https://code.tutsplus.com/how-to-parse-json-in-php--cms-36994t)
 
 
 615. Basado en el ejercicio 607.
@@ -334,6 +337,3 @@ $json = '{
 707. Crea una función `passwordGenerator` que genere una contraseña aleatoria de por defecto 8 caracteres, 2 digitos, 1 caracter especial y el resto letras. <br>
      La función recibirá 3 parámetros, `longitud`, `digitos` y `especiales`, y tendran los valores por defecto indicados.<br>
      Para probar la función, genera al menos 3 contraseñas, y volcar con `echo` el resultado de cada llamada.
-
-
-708. Quininela...
