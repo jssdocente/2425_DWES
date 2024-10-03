@@ -19,7 +19,7 @@ Copia estos arrays en un archivo `02_basicos_recursos.php` para poder utilizarlo
 
 ```php	
 //Nombres persona
-$names = ['Juan', 'Pedro', 'Luis', 'Ana', 'Maria', 'Rosa', 'Lucia', 'Sara', 'Pablo', 'Carlos', 'Javier', 'David', 'Marta', 'Elena', 'Carmen', 'Rocio', 'Isabel', 'Laura', 'Sonia', 'Eva', 'Cristina', 'Raquel', 'Nuria', 'Teresa', 'Silvia', 'Beatriz', 'Patricia', 'Lorena', 'Natalia', 'Ines', 'Celia', 'Alba', 'Clara', 'Alicia', 'Lola', 'Esther', 'Julia', 'Mercedes', 'Gloria', 'Concha', 'Dolores', 'Victoria', 'Aurora', 'Amparo', 'Rafaela', 'Rosario', 'Jose, 'Antonio', 'Manuel', 'Francisco', 'David'];
+$names = ['Juan', 'Pedro', 'Luis', 'Ana', 'Maria', 'Rosa', 'Lucia', 'Sara', 'Pablo', 'Carlos', 'Javier', 'David', 'Marta', 'Elena', 'Carmen', 'Rocio', 'Isabel', 'Laura', 'Sonia', 'Eva', 'Cristina', 'Raquel', 'Nuria', 'Teresa', 'Silvia', 'Beatriz', 'Patricia', 'Lorena', 'Natalia', 'Ines', 'Celia', 'Alba', 'Clara', 'Alicia', 'Lola', 'Esther', 'Julia', 'Mercedes', 'Gloria', 'Concha', 'Dolores', 'Victoria', 'Aurora', 'Amparo', 'Rafaela', 'Rosario', 'Jose', 'Antonio', 'Manuel', 'Francisco', 'David'];
 
 //Apellidos
 $surnames = ['Garcia', 'Fernandez', 'Lopez', 'Martinez', 'Sanchez', 'Perez', 'Gomez', 'Martin', 'Jimenez', 'Ruiz', 'Hernandez', 'Diaz', 'Moreno', 'Alvarez', 'Romero', 'Alonso', 'Gutierrez', 'Navarro', 'Torres', 'Dominguez', 'Vazquez', 'Ramos', 'Gil', 'Ramirez', 'Serrano', 'Blanco', 'Molina', 'Morales', 'Ortega', 'Delgado', 'Castro', 'Ortiz', 'Rubio', 'Marin', 'Sanz', 'Iglesias', 'Nuñez', 'Medina', 'Garrido', 'Cortes', 'Redondo', 'Calvo', 'Arias', 'Guerrero', 'Fuentes', 'Cabrera', 'Reyes', 'Pascual', 'Santos', 'Herrero'];
