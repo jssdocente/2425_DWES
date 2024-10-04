@@ -81,7 +81,7 @@ Teniendo el siguiente array: `$array = [1, 2, 4, 5, 6, 7, 8, 9];`
      
 
 506. Escribe un programa que solicite que realice lo siguiente:
-     - Agregar una frase de forma manual `$frase = "Soy feliz"`.  ([¿Cómo leer datos por teclado?](https://parzibyte.me/blog/2021/08/19/php-leer-datos-teclado/))
+     - Agregar una frase de forma manual `$frase = "Soy feliz"`.
      - Solicite un número para el desplazamiento de los caracteres.
      - Reemplace los espacios por `_'.
      - Que almacene cada caracter en un array
