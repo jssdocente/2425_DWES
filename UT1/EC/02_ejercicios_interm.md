@@ -81,7 +81,7 @@ Teniendo el siguiente array: `$array = [1, 2, 4, 5, 6, 7, 8, 9];`
      
 
 506. Escribe un programa que solicite que realice lo siguiente:
-     - Solicite una frase por teclado.  ([¿Cómo leer datos por teclado?](https://parzibyte.me/blog/2021/08/19/php-leer-datos-teclado/))
+     - Agregar una frase de forma manual `$frase = "Soy feliz"`.  ([¿Cómo leer datos por teclado?](https://parzibyte.me/blog/2021/08/19/php-leer-datos-teclado/))
      - Solicite un número para el desplazamiento de los caracteres.
      - Reemplace los espacios por `_'.
      - Que almacene cada caracter en un array
@@ -91,8 +91,8 @@ Teniendo el siguiente array: `$array = [1, 2, 4, 5, 6, 7, 8, 9];`
 
 
 507. Basado en el ejercicio anterior, escribe un programa que solicite que realice lo siguiente:
-     - Solicite una frase por teclado.
-     - Solicite un número para el desplazamiento de los caracteres. (Solo positivos)
+     - Agregar una frase de forma manual `$frase = "Soy feliz"`
+     - Define una variable para el número de desplazamiento (0,1,2,3,..) (Solo positivos)
      - Reemplace los espacios por `_'.
      - Que almacene cada caracter en un array
      - Y que aplique la rotación indicada en el número introducido. Es decir el nº de la posición 0, debe pasar a la posición 1, el de la 1 a la 2, etc.. el de la ultima posición debe pasar a la posición 0.Finalmente, muestra el contenido del array.
@@ -100,8 +100,8 @@ Teniendo el siguiente array: `$array = [1, 2, 4, 5, 6, 7, 8, 9];`
         Finalmente, muestra la información de la frase original, y la frase con la rotación aplicada.
 
 508. Basado en el ejercicio anterior, escribe un programa que solicite que realice lo siguiente:
-     - Solicite una frase por teclado.
-     - Solicite un número para el desplazamiento de los caracteres. (Puede ser positivo y negativo)
+     - Agregar una frase de forma manual `$frase = "Soy feliz"`
+     -  Define una variable para el número de desplazamiento de los caracteres. (Puede ser positivo y negativo)
      - Reemplace los espacios por `_'.
      - Que almacene cada caracter en un array
      - Y que aplique la rotación indicada en el número introducido. Es decir el nº de la posición 0, debe pasar a la posición 1, el de la 1 a la 2, etc.. el de la ultima posición debe pasar a la posición 0.Finalmente, muestra el contenido del array.
