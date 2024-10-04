@@ -108,7 +108,7 @@ Teniendo el siguiente array: `$array = [1, 2, 4, 5, 6, 7, 8, 9];`
 
         Finalmente, muestra la información de la frase original, y la frase con la rotación aplicada.
 
-509. Escribe un programa que genere 50 números aleatorios del 0 al 20 y que los muestre por pantalla separados por espacios y generará una lista ordenada. A continuación, el programa pedirá por teclado 2 valores y a continuación cambiará todas las ocurrencias del primer valor por el segundo, mostrandose los números que han cambiado en un color <em style="color: red">diferente</em>.
+509. Escribe un programa que genere 50 números aleatorios del 0 al 20 y que los muestre por pantalla separados por espacios y generará una lista ordenada. A continuación, el programa cambiará 2 valrores `$valor1, $valor2` (definidos por tí) y a continuación cambiará todas las ocurrencias del primer valor por el segundo, mostrandose los números que han cambiado en un color <em style="color: red">diferente</em>.
 
 510. Escribe un programa que genere 20 números enteros aleatorios entre 0 y 100 y que los almacene en un array. El programa debe ser capaz de pasar todos los números pares a las primeras posiciones del array (del 0 en adelante) y todos los números impares a las celdas restantes. Muestra el array resultante con un `print_r()`.
 
@@ -224,7 +224,7 @@ Al final, se mostrará el jugador ganadory el número del jugador que lo tiene.
 
 614. Crea una función `quitarPorDetras` que devuelva el número pasado como parámetro, pero quitando los dígitos indicados por el segundo parámetro. <br>
 
-615. Crea un programa que solicite un número en binario por teclado, y lo pase a decimal. Muestre el número en binario y el número en decimal. <br>
+615. Crea un programa que pase un número binario (indicado por tí), y lo pase a decimal. Muestre el número en binario y el número en decimal. <br>
      
 
 #### Funciones anónimas
