@@ -1,10 +1,8 @@
 # 04. Ejercicios de formularios
 
-
-
 ### Entrega:
 
-- Crea una carpeta llamada `UT2\EC\04_ejercicios_formularios`.
+- Crea una carpeta llamada `UT2\EC\03_ejercicios_formularios`.
 - Dentro de esa carpeta crea los ficheros que te indique el ejercicio, con los nombres que te idique.
   
 ### Recursos
@@ -376,6 +374,3 @@ Aplica los mismos conceptos del ejercicio anterior, e igualmente utiliza una sol
 Repite el ejercicio 6, pero esta vez enviando los datos por el método `POST`.
 
 > 💡 Recuerda que para enviar por POST: `method=POST`.
-
-
-

@@ -175,16 +175,6 @@ Al final, se mostrará el jugador ganadory el número del jugador que lo tiene.
   - Prueba las funciones anteriores probando con diferentes cantidades y factores de conversión.
 
 
-604. Refactoriza el ejercicio anterior, copiando las funciones en un archivo `02.604_funciones.php`, y creando un archivo `02.604_index.php` que las incluya y las pruebe (copiado del ejercicio anterior).
-
-
-605. Basaso en el ejercico anterior, utiliza los archivos `02.604_funciones.php` y rescata los valores de los parámetros de la URL, para que puedan ser pasados como parámetros a las funciones. Existen 2 parámetros: `moneda`, `cantidad` y factor de conversión `factor` (este valor puede ser opcional). <br>
-     
-      Por ejemplo: `http://localhost/02.605_index.php?moneda=dolar&cantidad=100&factor=1.08` o `http://localhost/02.605_index.php?moneda=euro&cantidad=100`
-
-      La página mostrará el resultado de la conversión, indicando `100 dolares son 108 euros a un factor de conversión de 1.08` o `100 euros son 92.59 dolares a un factor de conversión de 1.08`.
-
-
 606. Número de argumentos variables.
      
      Crea una función que reciba un número variable de argumentos y concatenalos juntos, separados por `,`. Devolver la cadena resultante.<br>
@@ -297,11 +287,11 @@ Al final, se mostrará el jugador ganadory el número del jugador que lo tiene.
 
 702. Crea una función `analizador` que reciba una cadena, y devuelva un array asociativo con la siguiente información:
      
-     - Número de palabras
-     - Número de letras
-     - Número de vocales
-     - Número de consonantes
-     - Número de espacios
+     - Número de palabras (key: palabras)
+     - Número de letras (key: letras)
+     - Número de vocales (key: vocales)
+     - Número de consonantes (key: consonantes)
+     - Número de espacios (key: espacios)
 
      Para conocer si un valor es un espacio, puedes utilizar la función `ctype_space($valor)`, para conocer si un valor es una letra, puedes utilizar la función `ctype_alpha($valor)`, para conocer si un valor es un número, puedes utilizar la función `ctype_digit($valor)`, etc...<br>
 
