@@ -7,12 +7,10 @@
   
 ### Recursos
 
-- Utiliza este `[css](ec_formularios/css/index.css)` para darle estilo a tus ejercicios, vincula el archivo `css` en tus ejercicios.
+- Utiliza este [css](ec_formularios/css/index.css) para darle estilo a tus ejercicios, vincula el archivo `css` en tus ejercicios.
 
 
-### Formularios
-
-#### Ejercicio 1
+### Ejercicio 1
 
 Crea un formulario con las siguientes características:
 
@@ -71,7 +69,7 @@ Ejercicio resuelto:
 </html>
 ```
 
-#### Ejercicio 2
+### Ejercicio 2
 
 Debes crear 2 páginas:
 
@@ -104,7 +102,7 @@ Debes crear 2 páginas:
   - Agrega un `link` para volver a la página anterior.
     
 
-#### Ejercicio 3
+### Ejercicio 3
 
 Debes crear 2 páginas:
 
@@ -136,7 +134,7 @@ Debes crear 2 páginas:
   - Agrega un `link` para volver a la página anterior.
     
 
-#### Ejercicio 4
+### Ejercicio 4
 
 Debes crear 1 páginas:
 
@@ -181,7 +179,7 @@ Debes crear 1 páginas:
   - Agrega un `link` para volver a la página anterior.
 
 
-#### Ejercicio 5
+### Ejercicio 5
 
 Debes crear 2 páginas:
 
@@ -217,7 +215,7 @@ Debes crear 2 páginas:
   - Agrega un `link` para volver a la página anterior.
   
 
-#### Ejercicio 6
+### Ejercicio 6
 
 Este ejercicio es una combinación de los ejercicios 4 y 5, donde la validación se lleva a cabo en la misma página.<br>
 En este ejercicio entran utilizado algunos ideas a destacar:
@@ -356,7 +354,7 @@ Debes crear 1 páginas:
 </html>
 ```
 
-#### Ejercicio 7
+### Ejercicio 7
 
 Repite el ejercicio anterior, con un formulario que tengas los siguientea campos:
 
@@ -369,7 +367,7 @@ Repite el ejercicio anterior, con un formulario que tengas los siguientea campos
 Aplica los mismos conceptos del ejercicio anterior, e igualmente utiliza una sola página para todo.
 
 
-#### Ejercicio 8
+### Ejercicio 8
 
 Repite el ejercicio 6, pero esta vez enviando los datos por el método `POST`.
 
