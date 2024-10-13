@@ -63,7 +63,7 @@ $num = 123456789;
 
 #### Ejerccio 2
 
-Las funciones del [ejercicio 609, 610, 611](02_ejercicios_require.md#funciones) las vamos a trasladar a este archivo `biblioteca/funciones02.php`.
+Las funciones del [ejercicio 609, 610, 611](02_ejercicios_interm.md#funciones) las vamos a trasladar a este archivo `biblioteca/funciones02.php`.
 
 Las funciones son las siguientes:
 
@@ -99,7 +99,7 @@ $num = 123456789;
 
 #### Ejercicio 3
 
-Las funciones del [ejercicio 700, 701, 702, 703](02_ejercicios_require.md#funciones-predefinidas) las vamos a trasladar a este archivo `biblioteca/funciones03.php`.
+Las funciones del [ejercicio 700, 701, 702, 703](02_ejercicios_interm.md#funciones-predefinidas) las vamos a trasladar a este archivo `biblioteca/funciones03.php`.
 
 Las funciones son las siguientes:
 
@@ -150,7 +150,7 @@ $frase = 'La ruta nos aportó otro paso natural';
 
 #### Ejercicio 4
 
-Las funciones del [ejercicio 704, 705, 706](02_ejercicios_require.md#funciones-predefinidas) las vamos a trasladar a este archivo `biblioteca/funciones04.php`.
+Las funciones del [ejercicio 704, 705, 706](02_ejercicios_interm.md#funciones-predefinidas) las vamos a trasladar a este archivo `biblioteca/funciones04.php`.
 
 Las funciones son las siguientes:
 
@@ -187,7 +187,7 @@ $frase = 'La ruta nos aportó otro paso natural';
 
 #### Ejercicio 5
 
-Las funciones del [ejercicio 707](02_ejercicios_require.md#funciones-predefinidas) las vamos a trasladar a este archivo `biblioteca/funciones05.php`.
+Las funciones del [ejercicio 707](02_ejercicios_interm.md#funciones-predefinidas) las vamos a trasladar a este archivo `biblioteca/funciones05.php`.
 
 Las funciones son las siguientes:
 
@@ -287,7 +287,7 @@ Divide el código del [Ejercicio 2](#ejercicio-2), para que esté dividido en 2 
 
 ### Ejercicio 8
 
-Las funciones del [ejercicio 603](02_ejercicios_require.md#funciones) las vamos a trasladar a este archivo `biblioteca/funciones05.php`.
+Las funciones del [ejercicio 603](02_ejercicios_interm.md#funciones) las vamos a trasladar a este archivo `biblioteca/funciones05.php`.
 
 Las funciones son las siguientes:
 
