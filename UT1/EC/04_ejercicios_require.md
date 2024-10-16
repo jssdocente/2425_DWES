@@ -351,11 +351,10 @@ Utilizando el fichero [data.php](_res/data.php), que contiene un array `$provinc
   - Um campo de número para filtrar por el código de la provincia.
   - Un campo de selección donde en un campo `select` se muestren las comunidades autónomas. (rellenado desde provincias, utiliza la función `array_map` para quedarte solo el nombre de la comunidad).
   
-  Al enviar el formulario, se enviarán los datos a un archivo llamado `04.009_logic.php` que se encargará de filtrar las provincias.<br>
+  Al enviar el formulario, se enviarán los datos a un archivo llamado `04.009_logic.php` que se encargará de filtrar las provincias que cumplan los criterios.<br>
   Las provincias que cumplan los filtros se guardarán en un array llamado `$provinciasFiltered` (que podrá ser accesible desde el archivo `04.009_view.php`).
   
-  
-   Los resultados en un archivo llamado `04.009_view.php`, de la siguiente forma:
+   Los resultados se mostrarán en un archivo llamado `04.009_view.php`, de la siguiente forma:
 
   ```php
   <?php
@@ -377,7 +376,9 @@ Utilizando el fichero [data.php](_res/data.php), que contiene un array `$provinc
       </ul>
       <?php if (count($provinciasFiltered)==0) :>
           <p>No se han encontrado provincias que cumplan los criterios.</p>
-          <a href="04.009_form.php">Probar de nuevo</a>
+          <p>
+            <a href="04.009_form.php">Probar de nuevo</a>
+          </p>
       <?php endif; ?>
   </body>
   </html>

@@ -167,16 +167,6 @@ Debes crear 1 páginas:
     *reglas:*
 
     - no mezcles el código PHP y HTML.
-  
-  
-- **04_action.php (acción)**
-
-  - Indique en un mensaje de texto, "Su edad es [edad] y pesa [peso]".
-  - si algún campo de texto está vacio, debe indicar un mensaje en rojo para cada uno de los campo no rellenado, en un Div
-    Ej: - "No ha escrito su edad"
-        - "No ha escrito su peso"
-  
-  - Agrega un `link` para volver a la página anterior.
 
 
 ### Ejercicio 5
@@ -284,19 +274,19 @@ Debes crear 1 páginas:
 
       $errors = [];
 
-      if (empty($nombre)) {
+      if (empty(trim($nombre))) {
         $errors[] = 'El campo nombre es obligatorio';
       }
 
-      if (empty($direccion)) {
+      if (empty(trim($direccion))) {
         $errors[] = 'El campo dirección es obligatorio';
       }
 
-      if (empty($email)) {
+      if (empty(trim($email))) {
         $errors[] = 'El campo email es obligatorio';
       }
 
-      if (empty($telefono)) {
+      if (empty(trim($telefono))) {
         $errors[] = 'El campo teléfono es obligatorio';
       }
     }
