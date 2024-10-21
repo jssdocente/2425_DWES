@@ -254,13 +254,26 @@ $ciudad = 'Madrid';
 </html>
 ```
 
-Separa la lógica de la presentación en dos ficheros diferentes, uno llamado `06.006_logic.php` y otro llamado `06.006_view.php`.
+Separa la lógica de la presentación en dos ficheros diferentes, uno llamado `04.006_controller.php` y otro llamado `04.006_view.php`.
 
 Haz lo necesario para que el script siga funcionando igual como si estuviera todo en un solo fichero.
 
 ### Ejercicio 7
 
-Basado en el [Ejercicio 2](#ejercicio-2), el número en lugar de ser fijo, lo vamos a pasar por parámetro en la URL, a través del siguiente formulario que estará en un archivo llamado `07.007_form.php`:
+En este ejercicio debes crear los siguientes ficheros:
+
+- 04.007_controller.php (Hace 2 funciones, Encarga de llamar al formulario o Validar la lógica y llamar a la vista si todo está correcto, o volver a llamar al formulario indicando el error)
+  - LLama al formulario si la petición no es tipo POST
+  - Valida y (si es OK llama a la Vista, y si no vuelve a llamar al Formulario pasando los errores cometidos).
+- 04.007_form.php
+- 04.007_logic.php
+- 04.007_view.php
+
+De tal forma, que el ciclo debe ser el siguiente:
+
+- El ejercicio se ejecuta llamando al Controller, este llama al Formulario.. cuando este se envia (POST) llama de nuevo al Controller, que debe ejecutar la lógica de validación (Distinguiendo si la petición es tipo POST, y en ese caso realiza la lógica de validación), 
+
+Basado en el [Ejercicio 2](#ejercicio-2) el número en lugar de ser fijo, lo vamos a pasar por parámetro en la URL, a través del siguiente formulario que estará en un archivo llamado `07.007_form.php`:
 
 ```php
 <!DOCTYPE html>
