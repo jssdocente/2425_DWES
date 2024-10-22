@@ -262,40 +262,46 @@ Haz lo necesario para que el script siga funcionando igual como si estuviera tod
 
 En este ejercicio debes crear los siguientes ficheros:
 
-- 04.007_controller.php (Hace 2 funciones, Encarga de llamar al formulario o Validar la lógica y llamar a la vista si todo está correcto, o volver a llamar al formulario indicando el error)
-  - LLama al formulario si la petición no es tipo POST
-  - Valida y (si es OK llama a la Vista, y si no vuelve a llamar al Formulario pasando los errores cometidos).
 - 04.007_form.php
 - 04.007_logic.php
 - 04.007_view.php
 
 De tal forma, que el ciclo debe ser el siguiente:
 
-- El ejercicio se ejecuta llamando al Controller, este llama al Formulario.. cuando este se envia (POST) llama de nuevo al Controller, que debe ejecutar la lógica de validación (Distinguiendo si la petición es tipo POST, y en ese caso realiza la lógica de validación), 
+1. Usuario accede a 04.007_form.php
+3. El Formulario envia la petición a 04.007_logic.php
+4. La lógica valida los datos
+   1. si son correctos llama a la Vista (04.007_view.php)
+   2. si no, vuelve a llamar al Formulario pasando los errores cometidos. 
+5. Desde la vista se muestra el resultado, y un enlace para volver al Formulario.
 
-Basado en el [Ejercicio 2](#ejercicio-2) el número en lugar de ser fijo, lo vamos a pasar por parámetro en la URL, a través del siguiente formulario que estará en un archivo llamado `07.007_form.php`:
-
+Formulario:
 ```php
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Ejercicio 7</title>
-</head>
-<body>
-    <h1>Introduce un número</h1>
-    <form action="07.007_logic.php" method="get">
-        <label for="num">Número:</label>
-        <input type="number" name="num" id="num">
-        <input type="submit" value="Enviar">
-    </form>
-</body>
-</html>
+ <form action="04.007_logic" method="POST">
+    <p><label>Nombre: <input type="text" name="nombre" size="20" maxlength="20"></label></p>
+    <p><label>Dirección: <input type="text" name="direccion" size="20" maxlength="50"></label></p>
+    <p><label>Email: <input type="email" name="email" size="20" maxlength="50"></label></p>
+    <p><label>Teléfono: <input type="tel" name="telefono" size="20" maxlength="50"></label></p>
+
+    <p>
+      <input type="submit" value="Enviar">
+      <input type="reset" value="Borrar">
+    </p>
+  </form>
 ```
 
-Ahora vamos a hacer que la lógica esté en un archivo llamado `07.007_logic.php` y la presentación en un archivo llamado `07.007_view.php`.
+Vista:
+```php
+ <div id="data">
+    <h3>Estos son sus datos</h3>
+    <p>Nombre: <?= $nombre ?></p>
+    <p>Dirección: <?= $direccion ?></p>
+    <p>Email: <?= $email ?></p>
+    <p>Teléfono: <?= $telefono ?></p>
 
-Divide el código del [Ejercicio 2](#ejercicio-2), para que esté dividido en 2 archivos, pero a nivel visual, el resultado sea el mismo.
+    <p><a href="04.007_form.php">Volver al formulario</a></p>
+  </div>    
+```
 
 
 ### Ejercicio 8
@@ -308,11 +314,14 @@ Las funciones son las siguientes:
 
 En base a esta función, crea un archivo `04.008_ejercicio.php` que utilice la función de `funciones05.php` y muestre los resultados por pantalla.
 
-Crea un formulario en un archivo llamado `04.008_form.php` donde el usuario puede introducir una cantidad en dólares y al enviar el formulario, se enviará a un archivo llamado `04.008_view.php` que se encargará de hacer la conversión de dólares a euros.
+Crea un formulario en un archivo llamado `04.008_form.php` donde el usuario puede introducir una cantidad en dólares y al enviar el formulario, se enviará a un archivo llamado `04.008_logic.php` que validará la información. En caso de que dolares o cambio no venga, se enviarán los errores de vuelta al formulario, a través de un array asociativo, utilizando la clave del campo (dolares, cambio) para almacenar el error para ese tipo de campo. `04.008_view.php` que se encargará de hacer la conversión de dólares a euros.
+En el formulario se mostrarán los errores debajo de los campos correspondientes.
+
+Si todo es correcto, se llama a la vista, que mostrará el resultado de la conversión.
 
 Utiliza la siguiente plantilla para el formulario:
 
-```html
+```php
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -322,8 +331,25 @@ Utiliza la siguiente plantilla para el formulario:
 <body>
     <h1>Conversor de dólares a euros</h1>
     <form action="04.008_view.php" method="GET">
-        <label for="dolares">Dólares:</label>
-        <input type="number" name="dolares" id="dolares">
+        <div>
+            <div>
+                <label for="dolares">Dólares:</label>
+                <input type="number" name="dolares" id="dolares">
+            </div>
+            <div>
+            <?php if ($errors["dolares"] ?? false) : ?>
+                ...
+            <?php endif; ?>
+            </div>    
+        </div>
+        <div>
+            <div>
+                <label for="cambio">Cambio día:</label>
+                <input type="number" name="cambio" id="cambio">
+            </div>
+            //Incluir el mensaje de error si existe
+        </div>
+
         <input type="submit" value="Enviar">
     </form>
 </body>
@@ -362,12 +388,12 @@ Utilizando el fichero [data.php](_res/data.php), que contiene un array `$provinc
   *Este formulario deberá tener:*
   - Un campo de texto para filtrar por nombre de provincia.
   - Um campo de número para filtrar por el código de la provincia.
-  - Un campo de selección donde en un campo `select` se muestren las comunidades autónomas. (rellenado desde provincias, utiliza la función `array_map` para quedarte solo el nombre de la comunidad).
+  - Un campo de selección donde en un campo [select](https://developer.mozilla.org/es/docs/Web/HTML/Element/select) se muestren las comunidades autónomas. (rellenado desde provincias, utiliza la función `array_map` para quedarte solo el nombre de la comunidad).
   
   Al enviar el formulario, se enviarán los datos a un archivo llamado `04.009_logic.php` que se encargará de filtrar las provincias que cumplan los criterios.<br>
   Las provincias que cumplan los filtros se guardarán en un array llamado `$provinciasFiltered` (que podrá ser accesible desde el archivo `04.009_view.php`).
   
-   Los resultados se mostrarán en un archivo llamado `04.009_view.php`, de la siguiente forma:
+  Los resultados se mostrarán en un archivo llamado `04.009_view.php`, de la siguiente forma:
 
   ```php
   <?php
