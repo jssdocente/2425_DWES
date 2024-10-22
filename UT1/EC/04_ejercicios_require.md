@@ -223,6 +223,10 @@ $specialChars = 2;
 
 En esta serie de ejercicios vamos a trabajar la división de un mismo fichero, que incluye tanto la lógica como la presentación, en dos ficheros, utilizando para ello las directivas de inclusión de archivos (`require`, `include`, `require_once`, `include_once`).
 
+**¿Cómo es el ciclo de una llamada en PHP?**
+
+![image](https://github.com/user-attachments/assets/fadb1bad-52f2-4f8f-867b-767b7095115e)
+
 
 ### Ejercicio 6
 
