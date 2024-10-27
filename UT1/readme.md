@@ -10,4 +10,5 @@
    1. [Soluciones](./EC_soluciones/02_medios)
 3. [Ejercicios Formularios](./EC/03_ejercicios_formularios.md)
 4. [Ejercicios Require y Include](./EC/04_ejercicios_require.md)
+   1. [Soluciones](./EC_soluciones/04_require/)
 
