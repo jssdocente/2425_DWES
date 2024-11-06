@@ -3,6 +3,7 @@
 ## Indice
 
 
+
 ### Ejercicios 
 
 1. [Ejercicios Básicos](./EC/01_ejercicios_basicos.md)
@@ -12,3 +13,7 @@
 4. [Ejercicios Require y Include](./EC/04_ejercicios_require.md)
    1. [Soluciones](./EC_soluciones/04_require/)
 
+
+### Anexo
+
+- [Configurar XDebug en Linux](https://docs.devsense.com/en/vscode/debug/xdebug-linux)
