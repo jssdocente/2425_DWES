@@ -1,0 +1,232 @@
+<?php
+
+//region Enums Definitions
+enum EntradaTipoEm: int {
+  case Normal = 1;
+  case Jubilado = 2;
+  case Estudiante = 3;
+  case VIP = 4;
+
+  public static function random(): self {
+    return self::cases()[rand(0, count(self::cases()) - 1)];
+  }
+
+}
+
+enum ZonaTipoEm: int {
+  case SalaPrincipal = 1;
+  case SalaCompraVenta = 2;
+  case SalaVIP = 3;
+
+  public static function random(): self {
+    return self::cases()[rand(0, count(self::cases()) - 1)];
+  }
+}
+
+//endregion
+
+//region Clases Zonas
+abstract class Zone {
+  public readonly ZonaTipoEm $tipo;
+  public readonly int $entradasDisponibles;  //Nº totales de entrada de una zona
+  public int $entradasVendidas; //Nº total de entradas vendidas
+
+  protected function __construct(ZonaTipoEm $tipo, int $entradasDisponibles) {
+    $this->tipo = $tipo;
+    $this->entradasDisponibles = $entradasDisponibles;
+    $this->entradasVendidas = 0;
+  }
+
+  public static function createZone(ZonaTipoEm $tipo): Zone {
+
+    return match ($tipo) {
+      ZonaTipoEm::SalaPrincipal => new SalaPrincipal(1000),
+      ZonaTipoEm::SalaCompraVenta => new SalaCompraVenta(200),
+      ZonaTipoEm::SalaVIP => new SalaVip(25)
+    };
+  }
+
+  /**
+   * @throws Exception
+   */
+  public function venderEntrada(EntradaTipoEm $tipo, int $cantidad): array {
+
+    if (($this->entradasVendidas + $cantidad) > $this->entradasDisponibles) {
+      //NO Hay entradas
+      throw new Exception("No hay entradas disponibles");
+    }
+
+    $entradas = array_map(fn() => Entrada::createEntrada($tipo), range(1, $cantidad));
+
+    $this->entradasVendidas += $cantidad;
+
+    return $entradas;
+  }
+
+}
+
+class SalaPrincipal extends Zone {
+
+  function __construct(int $entradas) {
+    parent::__construct(ZonaTipoEm::SalaPrincipal, $entradas);
+  }
+
+}
+
+class SalaCompraVenta extends Zone {
+
+  function __construct(int $entradas) {
+    parent::__construct(ZonaTipoEm::SalaCompraVenta, $entradas);
+  }
+
+}
+
+class SalaVip extends Zone {
+
+  function __construct(int $entradas) {
+    parent::__construct(ZonaTipoEm::SalaVIP, $entradas);
+  }
+}
+
+//endregion
+
+readonly class Entrada {
+  public EntradaTipoEm $tipo;
+  public float $precio;
+
+  private function __construct(EntradaTipoEm $tipo, float $precio) {
+    $this->tipo = $tipo;
+    $this->precio = $precio;
+  }
+
+  public static function createEntrada(EntradaTipoEm $tipo): Entrada {
+    //Encasuplo la lógica del precio de la entrada => puedo obtenerla de una BD
+
+    return match ($tipo) {
+      EntradaTipoEm::Normal => new Entrada($tipo, 10),
+      EntradaTipoEm::Jubilado => new Entrada($tipo, 2),
+      EntradaTipoEm::Estudiante => new Entrada($tipo, 5),
+      EntradaTipoEm::VIP => new Entrada($tipo, 20),
+    };
+  }
+
+  public function __toString(): string {
+    return "Entrada: {$this->tipo->name} - Precio: {$this->precio}€";
+  }
+
+}
+
+class Exposicion {
+
+  private array $zonas = [];
+
+  private $contabilidad = [
+    "ttVentas" => 0,
+    "ttEntradas" => 0,
+  ];
+
+  public function __construct() {
+    $this->zonas = [
+      ZonaTipoEm::SalaCompraVenta->value => Zone::createZone(ZonaTipoEm::SalaCompraVenta),
+      ZonaTipoEm::SalaPrincipal->value => Zone::createZone(ZonaTipoEm::SalaPrincipal),
+      ZonaTipoEm::SalaVIP->value => Zone::createZone(ZonaTipoEm::SalaVIP),
+    ];
+  }
+
+
+  public function comprarEntrada(EntradaTipoEm $tipo, ZonaTipoEm $zonaTipo, int $cantidad): bool|array {
+    //Obtener la zona
+    /** @var Zone $zona */
+    $zona = $this->zonas[$zonaTipo->value];
+
+    $resultado = false;
+
+    //Comprar la entrada en la zona.
+    try {
+      $entradas = $zona->venderEntrada($tipo, $cantidad);
+
+    } catch (Exception $ex) {
+      //Logar esta información
+      echo $ex->getMessage();
+      return false;
+    }
+
+    //Contabilizar la Venta.
+    $totalVenta = array_reduce($entradas, fn(float $total, Entrada $entrada) => $entrada->precio, 1.0);
+    $this->contabilidad["ttVentas"] += $totalVenta;
+    $this->contabilidad["ttEntradas"] += $cantidad;
+
+    //retorna. Si no hay entradas, devolver False, y si hay, devolver la entrada
+    $resultado = $entradas;
+
+    return $resultado;
+  }
+
+  public function getZonas(): array {
+    return $this->zonas;
+  }
+
+  public function getTotalVentas(): float {
+    return $this->contabilidad["ttVentas"];
+  }
+
+  public function getTotalEntradasVendidas(): int {
+    return $this->contabilidad["ttEntradas"];
+  }
+
+}
+
+
+//Programa principal
+
+$exp = new Exposicion();
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>Exposición Campanillas</h2>
+<h3>Zonas de las Exposición</h3>
+<ul>
+  <?php foreach ($exp->getZonas() as $zona) : ?>
+      <li><?= $zona->tipo->name ?></li>
+  <?php endforeach; ?>
+</ul>
+
+<h3>Compra de Entradas</h3>
+<?php foreach ($exp->getZonas() as $zona) : ?>
+  <?php
+  $entradas = [];
+  foreach (range(1, rand(1, 8)) as $i) {
+    $entrada = $exp->comprarEntrada(EntradaTipoEm::random(), $zona->tipo, 1);
+    if ($entrada) {
+      $entradas = [...$entradas, ...$entrada];
+    }
+  }
+  ?>
+    <p>Entradas compradas: <?= count($entradas) ?> => Zona <?= $zona->tipo->name ?> </p>
+    <ul>
+      <?php foreach ($entradas ?? [] as $entrada) : ?>
+          <li><?= $entrada ?></li>
+      <?php endforeach; ?>
+    </ul>
+<?php endforeach; ?>
+
+<h2>Contabilidad</h2>
+<h4>Total Entradas Sala</h4>
+<ul>
+  <?php foreach ($exp->getZonas() as $zona) : ?>
+      <li><?= $zona->tipo->name ?>: <?= $zona->entradasVendidas ?> </li>
+  <?php endforeach; ?>
+</ul>
+<h4>Totales</h4>
+<p>Total Entradas Vendidas: <?= $exp->getTotalEntradasVendidas() ?></p>
+<p>Total Ventas: <?= $exp->getTotalVentas() ?>€</p>
+</body>
+</html>
