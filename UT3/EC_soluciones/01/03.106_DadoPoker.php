@@ -39,7 +39,7 @@ class JuegoPoker {
   }
 
   public function reiniciar(): void {
-    $this->lastTirada = null;
+    unset($this->lastTirada);
     $this->tiradas = [];
     $this->finalizado = false;
     $this->iniciado = false;
@@ -57,13 +57,13 @@ class JuegoPoker {
 
     $this->lastTirada = DadoPokerFiguraEm::random();
     $this->tiradas[] = $this->lastTirada;
-
+    
     $this->checkIsFinalizado();
 
     return $this->lastTirada;
   }
 
-  public function getLastTirada(): DadoPokerFiguraEm {
+  public function getLastTirada(): ?DadoPokerFiguraEm {
     return $this->lastTirada;
   }
 
@@ -132,3 +132,8 @@ do {
 </main>
 </body>
 </html>
+
+
+
+
+
