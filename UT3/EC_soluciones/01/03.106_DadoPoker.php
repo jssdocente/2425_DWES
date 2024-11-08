@@ -30,7 +30,7 @@ class JuegoPoker {
    * @var array<DadoPokerFiguraEm>
    */
   private array $tiradas = [];
-  private ?DadoPokerFiguraEm $lastTirada;
+  private DadoPokerFiguraEm $lastTirada;
   private bool $finalizado = false;
   private bool $iniciado = false;
 
@@ -63,7 +63,7 @@ class JuegoPoker {
     return $this->lastTirada;
   }
 
-  public function getLastTirada(): ?DadoPokerFiguraEm {
+  public function getLastTirada(): DadoPokerFiguraEm {
     return $this->lastTirada;
   }
 
