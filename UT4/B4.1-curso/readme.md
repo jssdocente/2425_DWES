@@ -30,8 +30,8 @@ Crear una carpeta en vuestro repositorio de GitHub llamada `UT4/webapp` y dentro
 El trabajo están compuesto de una serie de capitulos que deberás ir completando y entregando en vuestro repositorio.<br>
 Cada capítulo además suele tener una serie de pasos, que deberás ir completando.<br>
 
-Por cada paso, una vez finalizado y todo funcione correctamente,**deberás hacer un commit**.<br>
-El <u>mensaje del commit debe ser descriptivo</u>, y tener estra estructura: `[CAP.XX/YY]: {enunciado del paso}`, done `XX` es el número de capítulo y `YY` el número de paso. <u>Cada paso en la documentacion tiene un enunciado, que deberás copiar en el mensaje del commit</u>.
+Por cada paso, una vez finalizado y todo funcione correctamente, **deberás hacer un commit**.<br>
+El <u>mensaje del commit debe ser descriptivo</u>, y tener esta estructura: `[CAP.XX/YY]: {enunciado del paso}`, done `XX` es el número de capítulo y `YY` el número de paso. <u>Cada paso en la documentacion tiene un enunciado, que deberás copiar en el mensaje del commit</u>.
 
 > ❓ En caso de que necesites realizar varios commits para un mismo paso, puedes hacerlo. Indicando XX/YY.1, XX/YY.2, etc.
 
