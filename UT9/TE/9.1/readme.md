@@ -1,9 +1,11 @@
-# Tarea Evaluable TE 9.1
+# Tarea Evaluable: Laravel y API Rest.  MUSIFY
 
 Esta tarea evaluable consiste en la creación de una página web para crear un catálogo musical global, obtenido las canciones y albumes de Spotify, y donde los usuarios pueden agregar un albúm o artista al catálogo global y a su propio catálogo musical.
 El objetivo además es crear una parte social, donde se muestren las albúmes, artistas y canciones más populares, bien a través de Likes o por número de reproduciones, a número de seguidores.
 
-## Requisitos Funcionamiento
+## Requisitos
+
+### Requisitos Funcionamiento
 
 Las principales funcionalidades que debe tener la aplicación son:
 
@@ -94,7 +96,7 @@ Las principales funcionalidades que debe tener la aplicación son:
   - Mostrar línea de una Canción/Track con imagen
 - Persnalizar página de Error 500
 - Personalizar página de Error 404
-- Utilizar Excepciones (si es necesario)
+- [Utilizar Excepciones (si es necesario)](https://jssdocente.github.io/dwes2425d/temas/08/22.Manejando-excepciones.html)
 - Utilizar logging, para registrar las acciones.
 
 
@@ -119,8 +121,17 @@ Documentación:
 
 - [Tema 7: Laravel básico](https://jssdocente.github.io/dwes2425d/temas/07/index.html)
 - [Tema 8: Laravel Avanzado](https://jssdocente.github.io/dwes2425d/temas/08/index.html)
+  
+Librerias:
 
-- Proyecto base
+- [AlpineJS]()
+
+Componentes/Iconos:
+
+- [BladeUI Kit](https://blade-ui-kit.com/)
+- [BladeUI Icons](https://blade-ui-kit.com/blade-icons)
+- [BladewindUI](https://bladewindui.com/)
+
   
 ## Primeros pasos
 
@@ -165,6 +176,8 @@ Si el test se ejecuta correctamente, todo está OK, y puedes empezar a realizar 
 
 
 
+## Proceso
+
 ### Entidades de BD
 
 Para este proyecto se requieren al menos los siguientes entidades de BD.
@@ -180,23 +193,59 @@ El diagrama de ER es el siguiente:
 <img src="./_res/img/ER-diagram.png" width="80%">
 
 
+### Rutas de la aplicación
 
+La aplicación Musify debe tener las siguientes rutas, con los nombres que se indican.
 
+```php
+  '/' => 'dashboard.index',
+  '/albums' => 'albums.index',
+  '/albums/search' => 'albums.search',
+  '/albums/{id}' => 'albums.show',
+  '/albums' => 'albums.store',
+  '/artists' => 'artists.index',
+  '/artists/search' => 'artists.search',
+  '/artists/{id}' => 'artists.show',
+  '/artists' => 'artists.store',
+  '/tracks/{id}' => 'tracks.play',
+  '/register' => 'register',
+  '/login' => 'login',
+  '/settings' => 'user.settings',
+  '/logout' => 'logout',
+  '/spotify/search' => 'spotify.search',
+  '/spotify' => 'spotify.index',
+  '/spotify/album/{id}' => 'spotify.show-album',
+  '/spotify/artist/{id}' => 'spotify.show-artist',
+  '/catalog' => 'catalog.index'
+``` 
+
+### Controladores y Vista
+
+En el proyecto base se muestra un controlador (SpotifyController). Realizar los controllers y vistas según se indican en la rutas y la funcionalidad requerida.
+
+### API Rest
+
+Próximamente...
 
 ## Anexos
 
-Funcionalidad de la aplicación.
+### Rúbrica de evaluación
 
-### Registro y Login de usuarios
+Próximamente...
+
+### Funcionalidad de la aplicación.
+
+
+#### Registro y Login de usuarios
 
 <img src="./_res/videos/01.register-login.gif" width="80%">
 
-### Página Spotify
+#### Página Spotify
 
 <img src="./_res/videos/02.spotify-pagina.gif" width="80%">
 
 
-### Funcionalidad general. 
+#### Funcionalidad general. 
 
 Se muestra cómo sería la página sin nada, sin albúms ni artistas. Se realiza la búsqueda
 de una `texto` en Spotify, y se agrega ese albúm al catálogo general, y al catálogo del suario.
@@ -205,7 +254,7 @@ de una `texto` en Spotify, y se agrega ese albúm al catálogo general, y al cat
 <img src="./_res/videos/03.agregar-album-from-spotify.gif" width="80%">
 
 
-### Agregar albúm/artista en sistema al catálogo usuario
+#### Agregar albúm/artista en sistema al catálogo usuario
 
 Se muestra cómo sería la funcionalidad de agregar un albúm/artista al catálogo personal de ese usuario, estando previamente ya ese albúm/artista en el sistema.
 
