@@ -112,10 +112,9 @@ Videos
 
 - [Curso laravel 11 para principiantes](https://laraveldaily.com/course/laravel-beginners)
 - [Aprendible: Curso laravel 11 desde cero](https://www.youtube.com/playlist?list=PLpKWS6gp0jd8wsN5wSDwEFcvkD6nQ66yM)
-- [Aprender Tailwind]()
-- [Aprender Eloquent]()
-- [Aprender crear una API con Laravel]()
-- 
+- [Aprender Tailwind](https://jssdocente.github.io/dwes2425d/temas/08/extra/tailwind/fundamentos-tailwind.html)
+- [Aprender Eloquent](https://jssdocente.github.io/dwes2425d/temas/08/extra/Eloquent/eloquent-videos.html)
+- [Aprender crear una API con Laravel](https://www.youtube.com/playlist?list=PLpKWS6gp0jd-FRvVvaMzbYPu3gAJZfQQ4) 
 
 Documentación:
 
@@ -124,7 +123,7 @@ Documentación:
   
 Librerias:
 
-- [AlpineJS]()
+- [AlpineJS](https://alpinejs.dev/)
 
 Componentes/Iconos:
 
@@ -195,7 +194,9 @@ El diagrama de ER es el siguiente:
 
 ### Rutas de la aplicación
 
-La aplicación Musify debe tener las siguientes rutas, con los nombres que se indican.
+La aplicación Musify debe tener las siguientes rutas, con los nombres que se indican. 
+
+Las rutas se deben ir creando a medida que se necesitan, ya que si creamos todas al principio, se deben agregar la lógica a cada una de ellas, o al menos un lógica básica que no dé error. En esta aplicación, como vamos a necesitar controladores, lo mejor es crear las rutas que necesitemos en cada momento.
 
 ```php
   '/' => 'dashboard.index',
@@ -219,9 +220,55 @@ La aplicación Musify debe tener las siguientes rutas, con los nombres que se in
   '/catalog' => 'catalog.index'
 ``` 
 
+### Migraciones
+
+Para poder crear la Base de Datos, es necesario crear las migraciones. Con las migraciones se crearán las tablas en la BD, y también cuando creemos una migración le indicaremos que queremos crear el `Modelo` asociado. Un `model` en Laravel, obtiene las propiedades o campos, de la migración asociada, por tanto es necesario asociar un migración a un modelo.
+
+En nuestr App, se necesitan crear los modelos para `Users, Albums, Artists, Tracks` (al menos), y las relaciones entre ellas, y las tablas *pivot* o intermedias, entre ciertas tablas, que tienen realaciones de `muchos a muchos`.
+
+Las tablas intermedias, `pivot` se suelen crear dentro de la migración, de la tabla principal asociada, por Ejemplo, un User tiene asociados en el catálogo muchos Albúms, y un Album puede ser agregado a sus catálogos por muchos User, por tanto se requiere la tabla intermedia, `album_user`.
+
+[Ver videos Eloquent relaciones](https://jssdocente.github.io/dwes2425d/temas/08/extra/Eloquent/eloquent-videos.html)
+
+- Crear las migraciones y los modelos asociados. 
+- Campos de cada tabla/modelo están disponibles en el diagrama de tablas que se adjunta.
+
+**Claves Primarias**
+
+Importante!!:
+
+Spotify utiliza para los Albums y Artistas, un identificador `alfanumérico` por tanto, en nuestra App, se necesita utilizar el mismo identificador para las tablas, es decir, que un Album, tendrá un PK (Primary Key) tipo alfanumérica, no auto-incremental.
+
+### Modelos
+
+Los modelos en Laravel son clases que heredan de `Model`, y la mágia de Laravel, unido a las migraciones, son capaces de obtener y saber qué propiedades tiene un modelo. 
+
+Por defecto, todos los modelos tienen PK numéricos, y autoincrementales, para cambiar este comportamiento es necesario indicarlo en el propio modelo, dando valor a ciertas propiedades heredadas de la clase `Model`.
+
+Ejemplo Album:
+
+```php
+class Album extends Model {
+  use HasFactory;
+
+  protected $guarded = [];  //No aplicar seguridad sobre ningún campo al agregar registros
+
+  protected $keyType = "'string'";  //PK tipo string
+  public $incrementing = false;  //No auto-incremental
+
+
+}
+```
+
+
 ### Controladores y Vista
 
 En el proyecto base se muestra un controlador (SpotifyController). Realizar los controllers y vistas según se indican en la rutas y la funcionalidad requerida.
+
+Para crear las vistas, se debe utilizar Tailwind para la parte del CSS. En el proyecto base que se entrega, está copletamente configurado para poder hacer uso de Tailwind directamente sin ninguna configuración previa.
+
+Para [aprender Tailwind revisa estos Videos](https://jssdocente.github.io/dwes2425d/temas/08/extra/tailwind/fundamentos-tailwind.html)
+
 
 ### API Rest
 
