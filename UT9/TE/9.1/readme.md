@@ -174,7 +174,16 @@ Para validar que todo está ok, antes de empezar, hay que validar que el acceso 
 
 Si el test se ejecuta correctamente, todo está OK, y puedes empezar a realizar el PROYECTO.
 
+**Incluir imágenes en proceso de Build**
 
+Para que las imágenes puedan ser obtenidas en el proceso de `build`, con el comando `npm run build` necesitamos incluir este código dentro del fichero `resources\js\js.js`.
+
+```js
+...
+
+import.meta.glob(["../images/**"]);
+```
+> Esto supone que existe una carpeta `images` dentro de la carpeta `resources`.
 
 ## Proceso
 
