@@ -120,6 +120,7 @@ Documentación:
 
 - [Tema 7: Laravel básico](https://jssdocente.github.io/dwes2425d/temas/07/index.html)
 - [Tema 8: Laravel Avanzado](https://jssdocente.github.io/dwes2425d/temas/08/index.html)
+- [Librería Spotify](https://github.com/aerni/laravel-spotify#usage-example)
   
 Librerias:
 
