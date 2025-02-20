@@ -99,7 +99,7 @@ php artisan jsonapi:schema albums
 
 Esto crea un nuevo archivo, `app/JsonApi/V1/Albums/AlbumSchema.php`.
 
-**Confirar esquema Album**
+**Configurar esquema Album**
 
 Tendremos que revisar que nuestro esquema haya, enlazado al modelo `Album` correctamente, y además tendremos que indicar qué campos del modelo queremos exportar en nuestra API.
 
@@ -388,7 +388,7 @@ En resumen para cada recurso se debe crear:
 
 1. El esquema `php artisan jsonapi:schema {recurso}`
 2. Dentro del esquema agregar los `fields` y las `relations`.
-3. Agregar el esquema la servidor dentro del fichero `JsonApi/Server.php`, dentro del método `allSchemas`.
+3. Agregar el esquema al servidor dentro del fichero `JsonApi/Server.php`, dentro del método `allSchemas`.
 4. Agregar el esquema también a las rutas del servidor `routes\api.php`, indicando ` $server->resource('{resource}', JsonApiController::class)->readOnly()`, y las relaciones que tenga el recurso.
 5. Y por último, comprobar que las rutas se han creado bien, con el comando `php artisan route:list`
 6. Y para finalizar, crear las peticiones de prueba, en el proyecto de `Postman`.
