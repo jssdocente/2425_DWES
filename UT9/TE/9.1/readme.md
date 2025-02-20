@@ -282,7 +282,7 @@ Para [aprender Tailwind revisa estos Videos](https://jssdocente.github.io/dwes24
 
 ### API Rest
 
-Próximamente...
+**Para este paso, seguir el siguiente [documento](./doc/api-rest.md)**
 
 ## Anexos
 
