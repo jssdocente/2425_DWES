@@ -337,8 +337,7 @@ Por último también es fundamental, tener rutas para obtener la información re
 
 Dentro del fichero `routes\api.php`, agrega las siguientes líneas:
 
-```php
-
+```diff
 JsonApiRoute::server('v1')
       ->prefix('v1')
       ->resources(function (ResourceRegistrar $server) {
@@ -370,10 +369,12 @@ GET|HEAD   api/v1/albums/{album}/tracks .................. v1.albums.tracks
 
 Ahora desde Postman, crear las peticiones necesarias para probar todas las nuevas rutas creadas:
 
-- Obtener todos los albums `https://musify.test/api/v1/albums`
-- Obtener un album `https://musify.test/api/v1/album/{id}`
-- Obtenmer el artista de un Album `https://musify.test/api/v1/album/{id}/artist`
-- Obtener las canciones de un Album `https://musify.test/api/v1/albums/{id}/tracks`
+- Obtener todos los albums `https://musify.test/api/v1/albums`.  => `getAlbums`
+- Obtener un album `https://musify.test/api/v1/album/{id}`  => `getAlbum`
+- Obtenmer el artista de un Album `https://musify.test/api/v1/album/{id}/artist` => `getAlbum-artist`
+- Obtener las canciones de un Album `https://musify.test/api/v1/albums/{id}/tracks` => `getAlbum-tracks`
+
+Para agrupar todas estas rutas, crea una carpeta, llamala `albums` y crea dentro las peticiones indicadas. Cada petición ponle el nombre que se indica a la derecha de cada ruta.
   
 > Indicar en todas estas peticiones el `Header` => `Accept: application/vnd.api+json`.
 
